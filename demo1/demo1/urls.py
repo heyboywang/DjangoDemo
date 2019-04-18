@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r"^",include('booktest.urls',namespace = "booktest")),
 
+
 ]
 

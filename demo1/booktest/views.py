@@ -35,3 +35,11 @@ def list(request):
     #     return HttpResponse("没有图书")
     book = Bookinfo.objects.all()
     return render(request,'booktest/list.html',{'booklist':book})
+
+def delete(request,i):
+    try:
+        Bookinfo.objects.get(pk = int(i)).delete()
+        book = Bookinfo.objects.all()
+        return render(request, 'booktest/list.html', {'booklist': book})
+    except:
+        return HttpResponse("删除失败")
