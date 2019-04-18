@@ -15,3 +15,7 @@ class HeroInfo(models.Model):
     hBook = models.ForeignKey('Bookinfo',on_delete=models.CASCADE)
     def __str__(self):
         return self.hname
+
+    def skill(self):
+        return self.hcontent
+    skill.short_description = "功夫"

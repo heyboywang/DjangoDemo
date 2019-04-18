@@ -14,7 +14,7 @@ class BookinfoAdmin(admin.ModelAdmin):
 
 class HeroInfoAdmin(admin.ModelAdmin):
     #显示字段
-    list_display = ['hname','hgender','hcontent']
+    list_display = ['hname','hgender','skill']
     #过滤字段
     list_filter = ['hgender','hcontent']
     #搜索字段
