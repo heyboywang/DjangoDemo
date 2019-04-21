@@ -10,5 +10,8 @@ urlpatterns = [
     url(r'^detail/(\d+)/$',views.detail,name="detail"),
     url(r'^delete/(\d+)/$',views.delete,name="delete"),
     url(r'^addHero/(\d+)/$',views.addHero,name="addHero"),
-    url(r'^addherotool/(\d+)$',views.addherotool,name="addherotool")
+    url(r'^addherotool/(\d+)$',views.addherotool,name="addherotool"),
+    url(r'^deletehero/(\d+)$',views.deletehero,name="deletehero"),
+    url(r'^addbook/$',views.addbook,name="addbook"),
+    url(r'^addbooktool/$',views.addbooktool,name="addbooktool"),
 ]

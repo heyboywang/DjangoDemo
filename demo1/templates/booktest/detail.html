@@ -9,7 +9,7 @@
     <div class="connect">
         <h2>图书{{book.btitle}}</h2>
         {% for hero in book.heroinfo_set.all %}
-            <li>{{hero.hname}} ------ {{hero.hcontent}}</li>
+            <li>{{hero.hname}} ------ {{hero.hcontent}}&nbsp;&nbsp;<a href="{% url 'booktest:deletehero' hero.id %}">删除角色</a></li>
         {% empty %}
             <h3>没有角色信息</h3>
         {% endfor %}

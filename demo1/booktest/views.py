@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from .models import Bookinfo,HeroInfo
 from django.template import loader
+import datetime
 
 # Create your views here.
 
@@ -48,6 +49,22 @@ def delete(request,i):
     except:
         return HttpResponse("删除失败")
 
+def addbook(request):
+    return render(request,'booktest/addbook.html')
+
+def addbooktool(request):
+    print("++++++++++++++++++++++++++++")
+    btitle = request.POST['btitle']
+    b1 = Bookinfo()
+    b1.btitle = btitle
+    b1.bpub_date = datetime.datetime.now()
+    print(b1.bpub_date)
+    b1.save()
+    book = Bookinfo.objects.all()
+    # return render(request, 'booktest/list.html', {'booklist': book})
+    return HttpResponseRedirect('/list/', {'booklist': book})
+    # return HttpResponse("添加成功")
+
 def addHero(request,i):
     book = Bookinfo.objects.get(pk=int(i))
     return render(request,'booktest/addhero.html', {'book': book})
@@ -72,3 +89,12 @@ def addherotool(request,i):
 
     # print(hname,hgender,hcontent,hBook_id)
     # return HttpResponse("添加成功")
+
+def deletehero(request,i):
+    hero = HeroInfo.objects.get(pk = int(i))
+    book = hero.hBook
+    hero.delete()
+    return HttpResponseRedirect('/detail/' + str(book.id) + '/', {'book': book})
+
+
+

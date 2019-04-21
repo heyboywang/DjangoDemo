@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加图书</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="connect">
+        <h2>添加图书界面</h2>
+        <form action="{% url 'booktest:addbooktool'  %}" method="post">
+            请输入添加图书书名：<br>
+            <input type="text" name="btitle">
+            <input type="submit" value="提交">
+        </form>
+    </div>
+
+
+</body>
+</html>

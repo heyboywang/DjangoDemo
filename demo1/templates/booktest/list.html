@@ -17,6 +17,8 @@
             {% empty %}
                 <h3>没有图书</h3>
             {% endfor %}
+            <br>
+            <a href="{% url 'booktest:addbook' %}">添加图书</a>
         </ul>
     </div>
 
